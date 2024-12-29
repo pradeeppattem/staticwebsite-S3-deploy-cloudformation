@@ -48,3 +48,16 @@ image.png
 Validation: 
 Go to AWS Console >> S3 Buckets >> Bucket >> Object URI 
 image.png
+
+
+Deleting Stack:
+1. Deleting the cloudformation stack directly with S3 bucket created fails. 
+2. We need to delete the S3 bucket recursively and then delete the cloudformation stack 
+
+Deletion Commands: 
+1. aws s3 rm s3://<bucket-name> --recursive # to delete the S3 bucket from CLI recursivley all the objects
+2. aws s3 rb s3://<bucket-name>  # once the bucket is empty delete the bucket with this command
+3. aws cloudformation delete-stack --stack-name s3-cf-web-stack # to delete the cloudformation stack 
+
+Validation: Validate in the AWS Console to see the  S3 bucket is removed and Cloudformation Stack is removed. 
+
