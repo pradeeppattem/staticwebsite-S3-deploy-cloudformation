@@ -45,7 +45,7 @@ I did use wrong template format version '2019-09-09' which gave the below error 
 Error Message: An error occurred (ValidationError) when calling the CreateStack operation: Template format error: 2019-09-09 is not a supported value forAWSTemplateFormatVersion.
 
 ## Resolution: Update the AWSTemplateFormatVersion to correct version - 2010-09-09 
-![Alt Text](/Users/pradeep/Documents/s3-cloudformation/Version_Correction.png) 
+![Alt Text](../Version_Correction.png) 
 
 ## Validation: 
 Go to AWS Console >> S3 Buckets >> Bucket >> Object URI 
