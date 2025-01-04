@@ -24,7 +24,7 @@
 
     ![Alt Text](./AWS_Details.png)
 2. aws configure # pass in the AWS Access Key, Secret Access Key as prompted in the CLI to configure the CLI to use your AWS account 
-3. List and confirm if the bucket is already existing using "aws s3 ls | grep "<your_s3_bucket_name>". As you can see in the below screenshot, bucket doesn't exist in the AWS. 
+3. List and confirm if the bucket is already existing using `aws s3 ls | grep <your_s3_bucket_name>`. As you can see in the below screenshot, bucket doesn't exist in the AWS. 
     ![Alt Text](./S3_bucket_checkl.png)
 
 3. aws cloudformation create-stack --stack-name s3-cf-web-stack --template-body file://s3-static-cf.yaml 
