@@ -1,9 +1,10 @@
-# This project demonstrates creating Amazon S3 bucket and hosting static website in Amazon S3 using Cloudformation 
+# Deploying Static Website in Amazon S3 using AWS Cloudformation
 
 ## Objective: 
 1. Configure AWS CLI 
 1. Create S3 bucket using Cloudformation
-3. Create an Index html file to host 
+3. Create an Index html file to host and deploy it to S3 
+4. Make it publicly accessible for public to view the content of your website
 
 ## Take Aways: 
 1. Configuring AWS CLI 
