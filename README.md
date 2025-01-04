@@ -26,7 +26,7 @@
 3. aws cloudformation create-stack --stack-name s3-cf-web-stack --template-body file://s3-static-cf.yaml 
 4. aws cloudformation describe-stacks --stack-name s3-cf-web-stack  # to check the status of the stack creation from CLI 
     image.png
-5. aws s3 ls | grep my-s3-static-bucket-by-cf-pk  > 'To check the S3 bucket created'
+5. aws s3 ls | grep my-s3-static-bucket-by-cf-pk  # To check the S3 bucket created
 6. aws s3 cp index.html s3://my-s3-static-bucket-by-cf-pk 
     image.png
     image.png
@@ -35,28 +35,28 @@
 
 
 
-Errors/ Challenges Faced: 
+## Errors/ Challenges Faced: 
 Error: An error occurred (ValidationError) when calling the CreateStack operation: Template format error: 2019-09-09 is not a supported value forAWSTemplateFormatVersion.
 
-Resolution: Update the AWSTemplateFormatVersion to correct version - 2010-09-09 
+## Resolution: Update the AWSTemplateFormatVersion to correct version - 2010-09-09 
 image.png
 
 
 
 
-Validation: 
+## Validation: 
 Go to AWS Console >> S3 Buckets >> Bucket >> Object URI 
 image.png
 
 
-Deleting Stack:
+## Deleting Stack:
 1. Deleting the cloudformation stack directly with S3 bucket created fails. 
 2. We need to delete the S3 bucket recursively and then delete the cloudformation stack 
 
-Deletion Commands: 
+## Deletion Commands: 
 1. aws s3 rm s3://<bucket-name> --recursive # to delete the S3 bucket from CLI recursivley all the objects
 2. aws s3 rb s3://<bucket-name>  # once the bucket is empty delete the bucket with this command
 3. aws cloudformation delete-stack --stack-name s3-cf-web-stack # to delete the cloudformation stack 
 
-Validation: Validate in the AWS Console to see the  S3 bucket is removed and Cloudformation Stack is removed. 
+## Validation: Validate in the AWS Console to see the  S3 bucket is removed and Cloudformation Stack is removed. 
 
