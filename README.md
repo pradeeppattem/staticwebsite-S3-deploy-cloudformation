@@ -13,7 +13,7 @@
 - S3 Bucket Policies 
 
 ## AWS CLI Commands: 
-1. `aws sts get-caller-identity` # this provides the current AWS Account details that has been configured like UserID, Account ID and ARN 
+- `aws sts get-caller-identity` # this provides the current AWS Account details that has been configured like UserID, Account ID and ARN 
 
     Ex: 
     {
