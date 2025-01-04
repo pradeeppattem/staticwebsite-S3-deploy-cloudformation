@@ -38,6 +38,8 @@
 ## Errors/ Challenges Faced: 
 Error: An error occurred (ValidationError) when calling the CreateStack operation: Template format error: 2019-09-09 is not a supported value forAWSTemplateFormatVersion.
 
+![Alt Text](image.png) 
+
 ## Resolution: Update the AWSTemplateFormatVersion to correct version - 2010-09-09 
 image.png
 
