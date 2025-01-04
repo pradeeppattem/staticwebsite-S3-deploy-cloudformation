@@ -24,6 +24,9 @@
 
     ![Alt Text](./AWS_Details.png)
 2. aws configure # pass in the AWS Access Key, Secret Access Key as prompted in the CLI to configure the CLI to use your AWS account 
+3. List and confirm if the bucket is already existing using "aws s3 ls | grep "<your_s3_bucket_name>". As you can see in the below screenshot, bucket doesn't exist in the AWS. 
+    ![Alt Text](./S3_bucket_checkl.png)
+
 3. aws cloudformation create-stack --stack-name s3-cf-web-stack --template-body file://s3-static-cf.yaml 
 4. aws cloudformation describe-stacks --stack-name s3-cf-web-stack  # to check the status of the stack creation from CLI 
     image.png
@@ -33,9 +36,9 @@
     image.png
 
 ## Errors/ Challenges Faced: 
-Error Message: An error occurred (ValidationError) when calling the CreateStack operation: Template format error: 2019-09-09 is not a supported value forAWSTemplateFormatVersion.
+I did use wrong template format version '2019-09-09' which gave the below error message. Updated it to the right version as in the below screenshot in the resolution.
 
-I did use wrong template format version which was '2019-09-09'. Updated the version to the right version as in the below screenshot in the resolution.
+Error Message: An error occurred (ValidationError) when calling the CreateStack operation: Template format error: 2019-09-09 is not a supported value forAWSTemplateFormatVersion.
 
 ## Resolution: Update the AWSTemplateFormatVersion to correct version - 2010-09-09 
 ![Alt Text](./Version_Correction.png) 
