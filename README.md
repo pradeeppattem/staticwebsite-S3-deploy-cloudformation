@@ -12,6 +12,7 @@
 - Creating S3 bucket and few of the properties required to create a basic S3 bucket 
 - S3 Bucket Policies 
 
+
 ## AWS CLI Commands: 
 - `aws sts get-caller-identity` # this provides the current AWS Account details that has been configured like UserID, Account ID and ARN 
 
