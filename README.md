@@ -13,7 +13,7 @@
 4. S3 Bucket Policies 
 
 ## AWS CLI Commands: 
-1. aws sts get-caller-identity # this provides the current AWS Account details that has been configured like UserID, Account ID and ARN 
+1. `aws sts get-caller-identity` # this provides the current AWS Account details that has been configured like UserID, Account ID and ARN 
 
     Ex: 
     {
@@ -24,10 +24,14 @@
 
     ![Alt Text](./AWS_Details.png)
 2. aws configure # pass in the AWS Access Key, Secret Access Key as prompted in the CLI to configure the CLI to use your AWS account 
-3. List and confirm if the bucket is already existing using `aws s3 ls | grep <your_s3_bucket_name>`. As you can see in the below screenshot, bucket doesn't exist in the AWS. 
-    ![Alt Text](./S3_bucket_checkl.png)
+- List and confirm if the bucket is already existing using 
+    - Using AWS CLI run the command `aws s3 ls | grep <your_s3_bucket_name>`. As you can see in the below screenshot, bucket doesn't exist in the AWS. 
+        ![Alt Text](./S3_bucket_checkl.png)
+    - You can also check the buckets in AWS Console. Navigate to S3 in AWS Console and search with the `<your_s3_bucket_name>` mentioned in the cloudformation template file. 
+        ![Alt Text](/AWS_S3_Console.png)
 
 3. aws cloudformation create-stack --stack-name s3-cf-web-stack --template-body file://s3-static-cf.yaml 
+aws cloudformation create-stack --stack-name s3-cf-web-stack --template-body file://<your_cf_yaml_file_name> 
 4. aws cloudformation describe-stacks --stack-name s3-cf-web-stack  # to check the status of the stack creation from CLI 
     image.png
 5. aws s3 ls | grep my-s3-static-bucket-by-cf-pk  # To check the S3 bucket created
