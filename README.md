@@ -22,13 +22,13 @@
         "Arn": "arn:aws:iam::XXXXXX:user/XXXXXXXX"
     }
 
-    ![Alt Text](/Users/pradeep/Documents/s3-cloudformation/AWS_Details.png)
+    ![Alt Text](/AWS_Details.png)
 - aws configure # pass in the AWS Access Key, Secret Access Key as prompted in the CLI to configure the CLI to use your AWS account 
 - List and confirm if the bucket is already existing using 
     - Using AWS CLI run the command `aws s3 ls | grep <your_s3_bucket_name>`. As you can see in the below screenshot, bucket doesn't exist in the AWS. 
-        ![Alt Text](/Users/pradeep/Documents/s3-cloudformation/S3_bucket_checkl.png)
+        ![Alt Text](/S3_bucket_checkl.png)
     - You can also check the buckets in AWS Console. Navigate to S3 in AWS Console and search with the `<your_s3_bucket_name>` mentioned in the cloudformation template file. 
-        ![Alt Text](/Users/pradeep/Documents/s3-cloudformation/AWS_S3_Console.png)
+        ![Alt Text](/AWS_S3_Console.png)
 
 - aws cloudformation create-stack --stack-name s3-cf-web-stack --template-body file://s3-static-cf.yaml 
 aws cloudformation create-stack --stack-name s3-cf-web-stack --template-body file://<your_cf_yaml_file_name> 
@@ -45,7 +45,7 @@ I did use wrong template format version '2019-09-09' which gave the below error 
 Error Message: An error occurred (ValidationError) when calling the CreateStack operation: Template format error: 2019-09-09 is not a supported value forAWSTemplateFormatVersion.
 
 ## Resolution: Update the AWSTemplateFormatVersion to correct version - 2010-09-09 
-![Alt Text](../Version_Correction.png) 
+![Alt Text](/Version_Correction.png) 
 
 ## Validation: 
 Go to AWS Console >> S3 Buckets >> Bucket >> Object URI 
