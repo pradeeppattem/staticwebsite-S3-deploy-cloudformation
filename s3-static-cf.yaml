@@ -8,3 +8,21 @@ Resources:
       BucketName: 'my-s3-static-bucket-by-cf-pk'
       WebsiteConfiguration:
         IndexDocument: 'index.html'
+      PublicAccessBlockConfiguration:
+        RestrictPublicBucket: false
+
+  BucketPolicy: 
+      Type: 'AWS::S3::BucketPolicy'
+      Properties: 
+        Bucket: !Ref MyS3Bucket
+        PolicyDocument: 
+          Version: '2012-10-17'
+          Statement: 
+            - Sid: 'PublicGetReadObject'
+              Effect: 'Allow'
+              Principal: '*'
+              Action: 's3:GetObject'
+              Resource: !Sub 'arn:aws:s3:::${MyS3Bucket}/*'
+
+
+
