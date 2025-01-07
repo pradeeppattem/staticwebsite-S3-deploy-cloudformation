@@ -62,7 +62,7 @@ Error Message: An error occurred (ValidationError) when calling the CreateStack 
 Go to AWS Console >> S3 Buckets >> Bucket >> Object(index.html) >> Object URI 
 - Refer to the below screenshot to get the Object URI. 
   ![Alt Text](misc/S3_OBJECT_URI.png) 
-- Object URI is the link that link where users can access to view the content. 
+- Object URI is the that users can access to view the content in the web. 
 
 ## Access Denied? 
 Any guesses? If you have some idea on Amazon S3 buckets, you might have already figured out that we haven't provided any S3 bucket property to enable public access. By default AWS Buckets have public access is blocked. 
