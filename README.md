@@ -32,18 +32,19 @@
 - Create S3 bucket from AWS CLI using command `aws cloudformation create-stack --stack-name s3-cf-web-stack --template-body file://<your_cf_yaml_file_name>` 
 - Check the status of the Cloudformation Stack 
     - AWS CLI using command `aws cloudformation describe-stacks --stack-name <your_stack_name>`
+      ![Alt Text](misc/CF_STACK_STATUS.png)
     - AWS Console 
-    image.png
+      ![Alt Text](misc/CF_STACK_UI.png)
 - Check if the S3 bucket is created in AWS 
-    - Using AWS CLI with command `aws s3 ls | grep <your_s3_bucket_name>` 
+    - Using AWS CLI with command `aws s3 ls | grep <your_s3_bucket_name>`
+      ![Alt Text](misc/S3_BUCKET_STATUS_CLI.png) 
     - AWS Console: 
+      ![Alt Text](misc/S3_BUCKET_STATUS_UI.png)
 - Check if any objects exists in the S3 bucket created. At this point no objects would be present as we just created the S3 bucket
     - From AWS CLI with command `aws s3 ls <your_s3_bucket_name>`
     - From AWS CLI click on your bucket name to view the list of objects in it. 
 - Create an wesbite hosting content file at project level. I have created an HTML file in this case with some basic content in it within at the project level. 
 - Copy the wesbite hosting content file to AWS S3 bucket you created from AWS CLI using command `aws s3 cp index.html s3://my-s3-static-bucket-by-cf-pk` 
-    image.png
-    image.png
 - Validate the S3 object is created within the S3 bucket created. You should see the index.html file in the bucket.
     - From AWS CLI using command `aws s3 ls <your_s3_bucket_name>` 
     - From AWS Console, refresh your S3 bucket objects page 
@@ -72,7 +73,6 @@ Any guesses? If you have some idea on Amazon S3 buckets, you might have already 
   ![Alt Text](misc/S3_BUCKET_POLICY.png)
 
 - update cloudformation stack command `aws cloudformation update-stack --stack-name s3-cf-web-stack --template-body file://<your_cf_yaml_file_name>`
-image.png
 ---
 ## Deleting Stack:
 - Deleting the cloudformation stack directly with S3 bucket created fails. 
