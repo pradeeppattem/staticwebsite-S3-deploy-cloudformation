@@ -60,11 +60,16 @@ Error Message: An error occurred (ValidationError) when calling the CreateStack 
 ## Validation: 
 Go to AWS Console >> S3 Buckets >> Bucket >> Object(index.html) >> Object URI 
 - Refer to the below screenshot to get the Object URI. 
+  ![Alt Text](misc/S3_OBJECT_URI.png) 
 - Object URI is the link that link where users can access to view the content. 
 
 ## Access Denied? 
 Any guesses? If you have some idea on Amazon S3 buckets, you might have already figured out that we haven't provided any S3 bucket property to enable public access. By default AWS Buckets have public access is blocked. 
 
+- Template code before the public access is enabled and bucket policy is attached. 
+  ![Alt Text](misc/BEFORE_PUBLIC_ACCESS_ENABLED.png)
+- Template code after the public access is enabled and bucket policy is attached. 
+  ![Alt Text](misc/S3_BUCKET_POLICY.png)
 
 - update cloudformation stack command `aws cloudformation update-stack --stack-name s3-cf-web-stack --template-body file://<your_cf_yaml_file_name>`
 image.png

@@ -21,7 +21,7 @@ Resources:
     Type: "AWS::S3::BucketPolicy"
     Properties:
       Bucket: 
-        Ref MyS3Bucket
+        Ref: 'MyS3Bucket'
       PolicyDocument:
         Version: "2012-10-17"
         Statement:
@@ -30,5 +30,9 @@ Resources:
             Principal: "*"
             Action: "s3:GetObject"
             Resource: 
-              Sub "arn:aws:s3:::${MyS3Bucket}/*"
+              Fn::Join:
+                - ''
+                - - 'arn:aws:s3:::'
+                  - Ref: 'MyS3Bucket'
+                  - '/*'
 
